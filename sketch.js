@@ -40,16 +40,15 @@ function draw(){
 
 }
 
-async function getBackgroundImg(){
-
+async function getBackgroundImg() {
     // write code to fetch time from API
-    var response = await fetch("http://worldtimeapi.org/api/timezone/Asia/Kolkata");
+    var response = await fetch("https://worldclockapi.com/api/json/est/now/");
  
     //change the data in JSON format and store it in variable responseJSON
     var responseJSON = await response.json();
     
     //fetch datetime from responseJSON
-    var dateTime = responseJSON.datetime;
+    var dateTime = responseJSON.currentDateTime;
     
     // slice the datetime to extract hour
     hour = dateTime.slice(11, 13);
